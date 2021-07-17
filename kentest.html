@@ -12,11 +12,10 @@
     <style>
        header {
     padding: 50px;
-    background-image: url(https://image.freepik.com/free-photo/isolation-work-from-home-concept-flatlay-pencils-notepad-ruler-scissors-paper-clips-top-horizontal-view-copyspace-back-school-concept_73324-1003.jpg);
+    background-image: url(https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
     background-repeat : no-repeat;
     background-position : center;
-
-    height: 400px;
+    background-size: 100%;
        }
     h2 { 
         font-size: 1.2rem;
@@ -32,15 +31,19 @@
 
 <body>
         <header>
-            <div class="container">
+            <div class="container" style="padding-left: 500px; padding-right: 300px;">
               <h1>Job Search App</h1>
               <h2>Find your perfect job today!</h2>
               <br>
-              <span class ="form">
-                <input style = "max-width : 400px" type="text" class="form-control" placeholder="Job Title" id="jobName">
-                <input style = "max-width : 400px" type="text" class="form-control" placeholder="Location" id="jobLoc">
+              <div class="input-group mb-3">
+                <span class="input-group-text" style = "max-width : 300px; width: 87px;" type="text" id="jobName">Job</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" style = "max-width : 300px" type="text" id="jobLoc">Location</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
                 <button class="btn btn-primary btn-block " onclick = "searchingJob()">Search</button>
-              </span>
             </div>
           </header>
          
