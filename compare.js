@@ -56,7 +56,24 @@ for (let attribute in result)
 document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
 document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
 
-for (let i=0; i<dictionary[highestAttribute].pathway.length; i++)
-{
-    document.getElementById(`job${i}`).innerHTML = dictionary[highestAttribute].pathway[i];
+function displayResults(attribute){
+    let resultRef = document.getElementById("result");
+    let output = "";
+
+    for(let i = 0; i < dictionary[attribute].pathway.length; i++)
+    {
+        output += ` <div class="col">
+            <div class="card h-100">
+              <img src="img/giphy.gif" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${dictionary[attribute].pathway[i]}</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>`
+    }
+    
+    resultRef.innerHTML = output;
 }
+
+displayResults(highestAttribute);
