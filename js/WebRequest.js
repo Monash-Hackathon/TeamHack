@@ -1,4 +1,5 @@
 "use strict"
+let countryCode = "";
 
 function webServiceRequest(url, data) {
     // Build URL parameters from data object.
@@ -30,6 +31,18 @@ function webServiceRequest(url, data) {
     document.body.appendChild(script);
 }
 
+function dataForwardGeo(location, callbackName) {
+
+    //Define a variable to hold the data needed to be requested
+    let data = {
+        q: `${location}`,
+        key: "46a38f2f952f4a65a8340cb1d569a8db",
+        callback: callbackName
+    }
+
+    //Generate request to the web service
+    webServiceRequest(`https://api.opencagedata.com/geocode/v1/json`, data);
+}
 
 function jobSearch(jobName, location) {
 
@@ -42,16 +55,24 @@ function jobSearch(jobName, location) {
         where: `${location}`,
         callback: "showData"
     }
-
+    let reqString = "https://api.adzuna.com/v1/api/jobs/"
     //Generate request to the web service
-    webServiceRequest(`https://api.adzuna.com/v1/api/jobs/gb/search/1`, data);
+    webServiceRequest(`${reqString}${countryCode}/search/1`, data);
 }
 
 function searchingJob() {
     let nameRef = document.getElementById("jobName")
     let locRef = document.getElementById("jobLoc")
 
-    jobSearch(nameRef.value, locRef.value, "showData")
+    dataForwardGeo(locRef.value, "findCountryCode")
+
+    setTimeout(()=>{jobSearch(nameRef.value, locRef.value, "showData")}, 3000)
+
+}
+
+function findCountryCode(result){
+    countryCode = result.results[0].components.country_code;
+    console.log(countryCode);
 }
 
 function showData(result) {
