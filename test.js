@@ -19,13 +19,36 @@ for (let i=0; i<questions.length; i++)
 {
     string += `<span> ${questions[i]} </span>
     <span>
-    <input type="radio" name=question${i}> 
-    <input type="radio" name=question${i}> 
-    <input type="radio" name=question${i}>
-    <input type="radio" name=question${i}> 
-    <input type="radio" name=question${i}>
-    <input type="radio" name=question${i}> 
+    <input type="radio" name="question${i}" id="question${i},0" value=0> 
+    <input type="radio" name="question${i}" id="question${i},1" value=1> 
+    <input type="radio" name="question${i}" id="question${i},2" value=2>
+    <input type="radio" name="question${i}" id="question${i},3" value=3> 
+    <input type="radio" name="question${i}" id="question${i},4" value=4>
+    <input type="radio" name="question${i}" id="question${i},5" value=5> 
     </span>
     <br>`;
 }
 allQuestionsRef.innerHTML = string
+
+
+/***
+ * @description function that returns the results of the personality test 
+ */
+function submit()
+{
+    let answer = [0,0,0,0,0,0]
+    // outer loop checks each question
+    for(let i=0; i<questions.length; i++)
+    {
+        // inner loop checks for buttons selected in each question
+        for(let j=0; j<5; j++)
+        {
+            let buttonSelected = document.getElementById(`question${i},${j}`);
+            if (buttonSelected.checked == true)
+            {
+                answer[j]++
+            }
+        }
+    }
+    return answer
+}
