@@ -1,5 +1,6 @@
 "use strict"
 let countryCode = "";
+let currency = "";
 
 function webServiceRequest(url, data) {
     // Build URL parameters from data object.
@@ -72,7 +73,7 @@ function searchingJob() {
 
 function findCountryCode(result){
     countryCode = result.results[0].components.country_code;
-    console.log(countryCode);
+    currency =result.results[0].annotations.currency.iso_code;
 }
 
 function showData(result) {
@@ -83,7 +84,7 @@ function showData(result) {
 
     while (i<10) {
         try {output += `<div class = "card-body>
-        <h4 class = "card-title">${data[i].title}<br> ${data[i].salary_max}</h4>
+        <h4 class = "card-title">${data[i].title}<br> <b>${currency}</b>${data[i].salary_max}</h4>
         <h5> ${data[i].location.display_name}</h5>
         <p class = "card-text"> ${data[i].description} </p>
         <a href = "${data[i].redirect_url}" >View Job</a> 
