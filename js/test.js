@@ -220,11 +220,11 @@ string += '<div style="text-align: center">'
 
 for (let i=0; i<list.length; i++)
 {
-    string += `<span>${i+1}. ${list[i].question}</span> <br>
+    string += `<font size="4"> <span>${i+1}. ${list[i].question}</span> <br>
     <span style="float: center">
-    <input type="radio" name="question${i}" id="question${i},0"> <label>No</label> 
-    <input type="radio" name="question${i}" id="question${i},1"> <label>Yes</label> 
-    </span>
+    <label style="color:#2dc937">Yes</label> <input type="radio" name="question${i}" id="question${i},0"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label style="color:#cc3232">No</label> <input type="radio" name="question${i}" id="question${i},1"> 
+    </span> <font>
     <br><hr>`;
 }
 string += "</div>"
@@ -232,7 +232,7 @@ allQuestionsRef.innerHTML = string
 
 
 /***
- * @description function that returns the results of the personality test 
+ * @description returns the results of the personality test 
  */
 function submit()
 {
@@ -249,11 +249,11 @@ function submit()
    for(let i=0; i<list.length; i++)
    {
        // making sure either button is selected
-       if (document.getElementById(`question${i},1`).checked == true)
+       if (document.getElementById(`question${i},0`).checked == true)
        {
            answer[list[i].attribute]++
        }
-       else if (document.getElementById(`question${i},0`).checked == true) {} // does not need to do anything, just to make sure it is checked
+       else if (document.getElementById(`question${i},1`).checked == true) {} // does not need to do anything, just to make sure the question is answered
        else
        {
            return alert(`Question ${i+1} is not answered`)
@@ -262,4 +262,5 @@ function submit()
 
    let jsonString = JSON.stringify(answer)
    localStorage.setItem(TEST_RESULT, jsonString)
+   window.location.href = "compare.html"
 }
