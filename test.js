@@ -1,3 +1,4 @@
+// list of questions to ask the user
 let questions = ["I like to work on cars", "I like to do puzzles", "I am good at working independently",
 "I like to work in teams", "I am an ambitious person, I set goals for myself", "I like to organise things(files, desks/offices)",
 "I like to build things", "I like to read about art and music", "I like to have clear instructions to follow", 
@@ -16,7 +17,8 @@ let string = "";
 
 for (let i=0; i<questions.length; i++)
 {
-    string += `<span> ${questions[i]} 
+    string += `<span> ${questions[i]} </span>
+    <span>
     <input type="radio" name=question${i}> 
     <input type="radio" name=question${i}> 
     <input type="radio" name=question${i}>
@@ -26,5 +28,4 @@ for (let i=0; i<questions.length; i++)
     </span>
     <br>`;
 }
-
 allQuestionsRef.innerHTML = string
