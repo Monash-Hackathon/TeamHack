@@ -83,21 +83,23 @@ function showData(result) {
     let i = 0;
 
     while (i<10) {
-        output += `<div class = "card-body>`
+        output += `<div class = "container" style="border-radius: 15px; border: solid;" >
+                <div class="row align-items-start">`
         try 
         {
             if (data[i].salary_max != undefined)
             {
-                output += `<h4 class = "card-title">${data[i].title}<br> <b>${currency}</b> ${data[i].salary_max}</h4>`
+                output += `<div class="col" >${i+1}. ${data[i].title}<br></div> <div class="col"><b>${currency}</b> ${data[i].salary_max}</div>`
             }
             else
             {
-                output += `<h4 class = "card-title">${data[i].title}<br> Salary not specified</h4>`
+                output += `<div class="col">${data[i].title}<br> Salary not specified</div>`
                 
             }
-            output += `<h5> ${data[i].location.display_name}</h5>
-            <p class = "card-text"> ${data[i].description} </p>
-            <a href = "${data[i].redirect_url}" >View Job</a> 
+            output += `<div class="col"><h5> ${data[i].location.display_name}</h5></div>
+            <p class = "card-text"> ${data[i].description} </p></div>
+            <div style="padding-left: 1200px;"><a class="btn btn-primary" href = "${data[i].redirect_url}" role="button">View Job</a> 
+            </div><br>
             </div>
             </div>
             <br>`
