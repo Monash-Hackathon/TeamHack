@@ -74,7 +74,7 @@ let dictionary = {
         description: "These people like to work with others and enjoy persuading and performing.",
         pathway: ["Fashion Merchandising","Real Estate","Marketing/Sales","Law","Political Science","International Trade","Banking/Finance"],
         gif: ["https://www.increff.com/wp-content/uploads/2021/03/iris-x-Main-image.gif","https://blog.advids.co/wp-content/uploads//2017/06/Real-Estate11.gif", "https://i.pinimg.com/originals/91/16/8b/91168b4873f6659b3e9fdfe4b89cd864.gif",
-        "https://i.gifer.com/LHDQ.gif", "https://www.graphicsfactory.com/clip-art/image_files/image/5/1300645-occupations-033-12202006.gif", "https://thumbs.gfycat.com/BriskEdibleConey-size_restricted.gif", "https://www.intersystemsuki.com/wp-content/uploads/2020/06/finance.gif"],
+        "https://i.gifer.com/LHDQ.gif", "https://images.wsj.net/im-236178?width=620&size=custom_1280x853", "https://thumbs.gfycat.com/BriskEdibleConey-size_restricted.gif", "https://www.intersystemsuki.com/wp-content/uploads/2020/06/finance.gif"],
         des: ["Fashion merchandisers oversee the style design of garments and accessories in retail clothing stores, costume suppliers, or fashion houses. It is the fashion merchandiser's responsibility to predict fashion trends, plan and implement store layouts, purchase apparel, and collaborate with designers.", 
         "A real estate agent helps his or her clients purchase, rent, or sell properties. They advise clients about market conditions, conduct walkthroughs, and provide guidance and assistance through the process of buying, selling, or leasing properties.", 
         "A sales and marketing manager is responsible for researching and developing marketing opportunities and planning and implementing new sales plans. The sales and marketing manager will also manage both the marketing and the sales staff and will perform managerial duties to meet the company's operations goals.", 
@@ -106,7 +106,7 @@ let data = localStorage.getItem(TEST_RESULT);
 let result = JSON.parse(data);
 
 // searching for the highest score
-let highestAttribute = "R";
+let highestAttribute = "E";
 for (let attribute in result)
 {
    if(result[attribute] > result[highestAttribute])
