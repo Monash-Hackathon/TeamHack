@@ -31,35 +31,23 @@ function webServiceRequest(url, data) {
 }
 
 
-function jobSearch(jobName, location, callbackName) {
+function jobSearch(jobName, location) {
 
     //Define a variable to hold the data needed to be requested
     let data = {
-        engine : "google_jobs",
-        q: `${jobName}`,
-        location : `${location}`,
-        api_key: "6f147a45afa10165eb8f514be29ee2ebde68971252c901c0779f9936a2ed19e3",
-        jsonp: callbackName
+        app_id: "afd0cfd8",
+        app_key: "9816f3772da75687810de10f5b1fa1bf",
+        what: `${jobName}`,
+        results_per_page: 10,
+        where: `${location}`,
+        callback: "showData"
     }
 
     //Generate request to the web service
-    webServiceRequest(`https://serpapi.com/search.json`, data);
+    webServiceRequest(`https://api.adzuna.com/v1/api/jobs/gb/search/1`, data);
 }
 
-function jobApply(jobId, callbackName) {
-    //Define a variable to hold the data needed to be requested
-    let data = {
-        engine : "google_jobs_listing",
-        q: `${jobId}`,
-        api_key: "6f147a45afa10165eb8f514be29ee2ebde68971252c901c0779f9936a2ed19e3",
-        output: callbackName
-    }
-
-    //Generate request to the web service
-    webServiceRequest(`https://serpapi.com/search`, data);
-}
-
-function abc() {
+function searchingJob() {
     let nameRef = document.getElementById("jobName")
     let locRef = document.getElementById("jobLoc")
 
@@ -68,28 +56,25 @@ function abc() {
 
 function showData(result) {
     let displayRef = document.getElementById("display");
-    displayRef.innerHTML = result
+    let data = result.results;
+    let output = "";
+    let i = 0;
+
+    while (i<10) {
+        try {output += `<div class = "card-body>
+        <h4 class = "card-title">${data[i].title}<br> ${data[i].salary_max}</h4>
+        <h5> ${data[i].location.display_name}</h5>
+        <p class = "card-text"> ${data[i].description} </p>
+        <a href = "${data[i].redirect_url}" >View Job</a> 
+        </div>
+        </div>
+        <br>`
+        i++;
+        }
+        catch(err){
+        i++;
+        }
+    }
+    displayRef.innerHTML = output;
+
 }
-
-var url = "https://serpapi.com/search";
-var key = "6f147a45afa10165eb8f514be29ee2ebde68971252c901c0779f9936a2ed19e3";
-var params = "{ engine: 'google_jobs', q: 'software', location: 'Malaysia'}"
-
-//create xmlHttpRequest object
-var http = new XMLHttpRequest();
-//open connection. true - asynchronous, false - synchronous
-http.open("POST", url + key, true);
-
-//Send the proper header information
-http.setRequestHeader("Content-type", "application/json");
-	
-let displayRef = document.getElementById("display");
-//Callback when the state changes
-http.onreadystatechange = function() {
-	if(http.readyState == 4 && http.status == 200) {
-        let a = JSON.parse(http.responseText)
-		displayRef.innerHTML = a.jobs_results[0].title;
-	}
-}
-//Send request to the server
-http.send(params);
