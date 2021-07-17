@@ -29,7 +29,6 @@ let results = [
         majors: ["Accounting","Court Reporting","Insurance","Administration","Medical Records","Banking","Data Processing"]
     }
 ]
-// console.log(results[0].majors[1])
 
 function displayResults(){
     let resultRef = document.getElementById("result");
@@ -56,4 +55,3 @@ function displayResults(){
 }
 
 displayResults();
-// console.log(results[1].attribute)
