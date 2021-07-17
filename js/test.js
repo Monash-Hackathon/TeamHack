@@ -222,8 +222,8 @@ for (let i=0; i<list.length; i++)
 {
     string += `<span>${i+1}. ${list[i].question}</span> <br>
     <span style="float: center">
-    <input type="radio" name="question${i}" id="question${i},0"> <label>No</label> 
-    <input type="radio" name="question${i}" id="question${i},1"> <label>Yes</label> 
+    <label>Yes</label> </t><input type="radio" name="question${i}" id="question${i},0"> <t>
+    <label>No</label> <input type="radio" name="question${i}" id="question${i},1"> 
     </span>
     <br><hr>`;
 }
@@ -232,7 +232,7 @@ allQuestionsRef.innerHTML = string
 
 
 /***
- * @description function that returns the results of the personality test 
+ * @description returns the results of the personality test 
  */
 function submit()
 {
@@ -249,11 +249,11 @@ function submit()
    for(let i=0; i<list.length; i++)
    {
        // making sure either button is selected
-       if (document.getElementById(`question${i},1`).checked == true)
+       if (document.getElementById(`question${i},0`).checked == true)
        {
            answer[list[i].attribute]++
        }
-       else if (document.getElementById(`question${i},0`).checked == true) {} // does not need to do anything, just to make sure it is checked
+       else if (document.getElementById(`question${i},1`).checked == true) {} // does not need to do anything, just to make sure the question is answered
        else
        {
            return alert(`Question ${i+1} is not answered`)

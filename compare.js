@@ -56,6 +56,11 @@ for (let attribute in result)
 document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
 document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
 
+
+/***
+ * @description creating cards with their job names, and display them to the user
+ * @param attribute the highest attribute of the user
+ */
 function displayResults(attribute){
     let resultRef = document.getElementById("result");
     let output = "";
@@ -76,4 +81,5 @@ function displayResults(attribute){
     resultRef.innerHTML = output;
 }
 
+// calling the function
 displayResults(highestAttribute);
