@@ -83,18 +83,29 @@ function showData(result) {
     let i = 0;
 
     while (i<10) {
-        try {output += `<div class = "card-body>
-        <h4 class = "card-title">${data[i].title}<br> <b>${currency}</b>${data[i].salary_max}</h4>
-        <h5> ${data[i].location.display_name}</h5>
-        <p class = "card-text"> ${data[i].description} </p>
-        <a href = "${data[i].redirect_url}" >View Job</a> 
-        </div>
-        </div>
-        <br>`
-        i++;
+        output += `<div class = "card-body>`
+        try 
+        {
+            if (data[i].salary_max != undefined)
+            {
+                output += `<h4 class = "card-title">${data[i].title}<br> <b>${currency}</b> ${data[i].salary_max}</h4>`
+            }
+            else
+            {
+                output += `<h4 class = "card-title">${data[i].title}<br> Salary not specified</h4>`
+                
+            }
+            output += `<h5> ${data[i].location.display_name}</h5>
+            <p class = "card-text"> ${data[i].description} </p>
+            <a href = "${data[i].redirect_url}" >View Job</a> 
+            </div>
+            </div>
+            <br>`
+            i++
         }
-        catch(err){
-        i++;
+        catch(err)  
+        {
+            i++;
         }
     }
     displayRef.innerHTML = output;
