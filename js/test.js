@@ -220,11 +220,11 @@ string += '<div style="text-align: center">'
 
 for (let i=0; i<list.length; i++)
 {
-    string += `<span>${i+1}. ${list[i].question}</span> <br>
+    string += `<font size="4"> <span>${i+1}. ${list[i].question}</span> <br>
     <span style="float: center">
-    <label>Yes</label> </t><input type="radio" name="question${i}" id="question${i},0"> <t>
-    <label>No</label> <input type="radio" name="question${i}" id="question${i},1"> 
-    </span>
+    <label style="color:#2dc937">Yes</label> <input type="radio" name="question${i}" id="question${i},0"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label style="color:#cc3232">No</label> <input type="radio" name="question${i}" id="question${i},1"> 
+    </span> <font>
     <br><hr>`;
 }
 string += "</div>"
@@ -262,5 +262,5 @@ function submit()
 
    let jsonString = JSON.stringify(answer)
    localStorage.setItem(TEST_RESULT, jsonString)
-   window.location.href = "result.html"
+   window.location.href = "compare.html"
 }
