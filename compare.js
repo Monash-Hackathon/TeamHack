@@ -140,7 +140,29 @@ function displayResults(attribute){
             </div>
           </div>`
     }
-    
+
+    output += `<div class="col">
+    <div class="card h-100">
+      <img src="https://media1.giphy.com/media/j39AzlvlJqE7e/200w.gif?cid=82a1493bm8ociit8vin3b3nq49fvht853fh7fhgbb5wqcgkv&rid=200w.gif&ct=g">
+      <div class="card-body">
+        <h5 class="card-title">Take RIASEC Test Again!</h5>
+        <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead try again 😝</p>
+        <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
+      </div>
+    </div>
+  </div>`
+  
+    output += `<div class="col">
+    <div class="card h-100">
+      <img src="https://media2.giphy.com/media/S1ZnyFKKJ9rwc/200w.gif?cid=82a1493b6pkmdq1vw84po0ewfb9jn7kkl68nz4q497ybrcmf&rid=200w.gif&ct=g">
+      <div class="card-body">
+        <h5 class="card-title">Search for more Job!</h5>
+        <p class="card-text">Still can't find your dream job? No worries, we got you covered ❤️ </p>
+        <a href="kentest.html" class="btn btn-primary stretched-link">Dream Job Come True</a>
+      </div>
+    </div>
+  </div>`
+  
     resultRef.innerHTML = output;
 }
 
