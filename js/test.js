@@ -262,5 +262,5 @@ function submit()
 
    let jsonString = JSON.stringify(answer)
    localStorage.setItem(TEST_RESULT, jsonString)
-   window.location.href = "result.html"
+   window.location.href = "compare.html"
 }
