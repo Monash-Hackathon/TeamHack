@@ -17,8 +17,8 @@ let string = "";
 
 for (let i=0; i<questions.length; i++)
 {
-    string += `<span> ${questions[i]} </span>
-    <span>
+    string += `<span> <li class="list-group-item">${questions[i]}</li></span>
+    <span style="float: right">
     <input type="radio" name=question${i}> 
     <input type="radio" name=question${i}> 
     <input type="radio" name=question${i}>
@@ -26,6 +26,6 @@ for (let i=0; i<questions.length; i++)
     <input type="radio" name=question${i}>
     <input type="radio" name=question${i}> 
     </span>
-    <br>`;
+    <br><hr>`;
 }
 allQuestionsRef.innerHTML = string
