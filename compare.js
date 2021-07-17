@@ -135,7 +135,7 @@ function displayResults(attribute){
       <div class="card-body">
         <h5 class="card-title">Take RIASEC Test Again!</h5>
         <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead try again 😝</p>
-        <a href="kentest.html" class="btn btn-primary stretched-link">Try Again</a>
+        <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
       </div>
     </div>
   </div>`
