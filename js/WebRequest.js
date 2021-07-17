@@ -39,7 +39,7 @@ function jobSearch(jobName, location, callbackName) {
         q: `${jobName}`,
         location : `${location}`,
         api_key: "6f147a45afa10165eb8f514be29ee2ebde68971252c901c0779f9936a2ed19e3",
-        json: callbackName
+        jsonp: callbackName
     }
 
     //Generate request to the web service
@@ -56,7 +56,7 @@ function jobApply(jobId, callbackName) {
     }
 
     //Generate request to the web service
-    webServiceRequest(`https://serpapi.com/search.json`, data);
+    webServiceRequest(`https://serpapi.com/search`, data);
 }
 
 function abc() {
@@ -70,3 +70,26 @@ function showData(result) {
     let displayRef = document.getElementById("display");
     displayRef.innerHTML = result
 }
+
+var url = "https://serpapi.com/search";
+var key = "6f147a45afa10165eb8f514be29ee2ebde68971252c901c0779f9936a2ed19e3";
+var params = "{ engine: 'google_jobs', q: 'software', location: 'Malaysia'}"
+
+//create xmlHttpRequest object
+var http = new XMLHttpRequest();
+//open connection. true - asynchronous, false - synchronous
+http.open("POST", url + key, true);
+
+//Send the proper header information
+http.setRequestHeader("Content-type", "application/json");
+	
+let displayRef = document.getElementById("display");
+//Callback when the state changes
+http.onreadystatechange = function() {
+	if(http.readyState == 4 && http.status == 200) {
+        let a = JSON.parse(http.responseText)
+		displayRef.innerHTML = a.jobs_results[0].title;
+	}
+}
+//Send request to the server
+http.send(params);
