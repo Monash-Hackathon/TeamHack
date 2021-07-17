@@ -1,33 +1,233 @@
-// list of questions to ask the user
-let questions = ["I like to work on cars", "I like to do puzzles", "I am good at working independently",
-"I like to work in teams", "I am an ambitious person, I set goals for myself", "I like to organise things(files, desks/offices)",
-"I like to build things", "I like to read about art and music", "I like to have clear instructions to follow", 
-"I lke to try to influence or persuade people", "I like to do experiments", "I like to teach or train people",
-"I like trying to help people solve their problems", "I like to take care of animals", "I wouldn't mind working 8 hours per day in an office",
-"I like selling things", "I enjoy creative writing", "I enjoy science", "I am quick to take on new responsibilites",
-"I am interested in healing people", "I enjoy trying to figure out how things work", "I like putting things together or assembling things", 
-"I am a creative person", "I pay attention to details", "I like to do filing or typing", "I like to analyse things(problems/situations)",
-"I like to play instruments or sing", "I enjoy learning about other cultures", "I would like to start my own business",
-"I like to cook", "I like acting in plays", "I am a practical person", "I like working wit numbers or charts",
-"I like to get into discussions about issues", "I am good at keeping records of my work", "I like to lead", "I like working outdoors",
-"I would like to work in an office", "I'm good at math", "I like helping people", "I like to draw", "I like to give speeches"];
+// local storage used 
+const TEST_RESULT = "test_result_data"
+
+// list of questions to ask the user and their attributes
+let list = [
+    {
+        question: "I like to work on cars",
+        attribute: "R"
+    },
+
+    {
+        question: "I like to do puzzles",
+        attribute: "I"
+    },
+
+    {
+        question: "I am good at working independently",
+        attribute: "A"
+    },
+
+    {
+        question: "I like to work in teams", 
+        attribute: "S"
+    },
+
+    {
+        question: "I am an ambitious person, I set goals for myself", 
+        attribute: "E"
+    },
+
+    {
+        question: "I like to organise things(files, desks/offices)",
+        attribute: "C"
+    },
+
+    {
+        question: "I like to build things",
+        attribute: "R"
+    },
+
+    {
+        question: "I like to read about art and music",
+        attribute: "A"
+    },
+
+    {
+        question: "I like to have clear instructions to follow",
+        attribute: "C" 
+    },
+
+    {
+        question: "I lke to try to influence or persuade people",
+        attribute: "E"
+    },
+
+    {
+        question: "I like to do experiments",
+        attribute: "I"
+    },
+
+    {
+        question: "I like to teach or train people",
+        attribute: "S"
+    },
+
+    {
+        question: "I like trying to help people solve their problems",
+        attribute: "S"
+    },
+
+    {
+        question: "I like to take care of animals",
+        attribute: "R"
+    },
+
+    {
+        question: "I wouldn't mind working 8 hours per day in an office",
+        attribute: "C"
+    },
+
+    {
+        question: "I like selling things",
+        attribute: "E"
+    },
+
+    {
+        question: "I enjoy creative writing",
+        attribute: "A"
+    },
+
+    {
+        question: "I enjoy science",
+        attribute: "I"
+    },
+
+    {
+        question: "I am quick to take on new responsibilites",
+        attribute: "E"
+    },
+
+    {
+        question: "I am interested in healing people",
+        attribute: "S"
+    },
+
+    {
+        question: "I enjoy trying to figure out how things work",
+        attribute: "I"
+    },
+
+    {
+        question: "I like putting things together or assembling things", 
+        attribute:"R"
+    },
+
+    {
+        question: "I am a creative person",
+        attribute: "A"
+    },
+
+    {
+        question: "I pay attention to details",
+        attribute: "C"
+    },
+
+    {
+        question: "I like to do filing or typing",
+        attribute: "C"
+    },
+
+    {
+        question: "I like to analyse things(problems/situations)",
+        attribute: "I"
+    },
+
+    {
+        question: "I like to play instruments or sing",
+        attribute: "A"
+    },
+
+    {
+        question: "I enjoy learning about other cultures",
+        attribute: "S"
+    },
+
+    {
+        question: "I would like to start my own business",
+        attribute: "E"
+    },
+
+    {
+        question: "I like to cook",
+        attribute: "R"
+    },
+
+    {
+        question: "I like acting in plays",
+        attribute: "A"
+    },
+
+    {
+        question: "I am a practical person",
+        attribute: "R"
+    },
+
+    {
+        question: "I like working with numbers or charts",
+        attribute: "I"
+    },
+
+    {
+        question: "I like to get into discussions about issues",
+        attribute: "S"
+    },
+
+    {
+        question: "I am good at keeping records of my work",
+        attribute: "C"
+    },
+
+    {
+        question: "I like to lead",
+        attribute: "E"
+    },
+
+    {
+        question: "I like working outdoors",
+        attribute: "R"
+    },
+
+    {
+        question: "I would like to work in an office",
+        attribute: "C"
+    },
+
+    {
+        question: "I'm good at math",
+        attribute: "I"
+    },
+
+    {
+        question: "I like helping people",
+        attribute: "S"
+    },
+
+    {
+        question: "I like to draw",
+        attribute: "A"
+    },
+
+    {
+        question: "I like to give speeches",
+        attribute: "E"
+    }
+]
 
 let allQuestionsRef = document.getElementById("allQuestions");
 let string = "";
+string += '<div style="text-align: center">'
 
-for (let i=0; i<questions.length; i++)
+for (let i=0; i<list.length; i++)
 {
-    string += `<span> <li class="list-group-item">${questions[i]}</li></span>
-    <span style="float: right">
-    <input type="radio" name="question${i}" id="question${i},0" value=0> 
-    <input type="radio" name="question${i}" id="question${i},1" value=1> 
-    <input type="radio" name="question${i}" id="question${i},2" value=2>
-    <input type="radio" name="question${i}" id="question${i},3" value=3> 
-    <input type="radio" name="question${i}" id="question${i},4" value=4>
-    <input type="radio" name="question${i}" id="question${i},5" value=5>  
+    string += `<span>${i+1}. ${list[i].question}</span> <br>
+    <span style="float: center">
+    <input type="radio" name="question${i}" id="question${i},0"> <label>No</label> 
+    <input type="radio" name="question${i}" id="question${i},1"> <label>Yes</label> 
     </span>
     <br><hr>`;
 }
+string += "</div>"
 allQuestionsRef.innerHTML = string
 
 
@@ -36,19 +236,30 @@ allQuestionsRef.innerHTML = string
  */
 function submit()
 {
-    let answer = [0,0,0,0,0,0]
-    // outer loop checks each question
-    for(let i=0; i<questions.length; i++)
-    {
-        // inner loop checks for buttons selected in each question
-        for(let j=0; j<5; j++)
-        {
-            let buttonSelected = document.getElementById(`question${i},${j}`);
-            if (buttonSelected.checked == true)
-            {
-                answer[j]++
-            }
-        }
+    let answer = {
+        "R": 0,
+        "I": 0,
+        "A": 0,
+        "S": 0,
+        "E": 0,
+        "C": 0
     }
-    return answer
+
+   // iterate through each question
+   for(let i=0; i<list.length; i++)
+   {
+       // making sure either button is selected
+       if (document.getElementById(`question${i},1`).checked == true)
+       {
+           answer[list[i].attribute]++
+       }
+       else if (document.getElementById(`question${i},0`).checked == true) {} // does not need to do anything, just to make sure it is checked
+       else
+       {
+           return alert(`Question ${i+1} is not answered`)
+       }
+   }
+
+   let jsonString = JSON.stringify(answer)
+   localStorage.setItem(TEST_RESULT, jsonString)
 }
