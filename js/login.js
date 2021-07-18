@@ -22,7 +22,7 @@ function createAcc(){
 
         updateData(ACC_CLASS, acc)
 
-        window.location = "index.html";
+        window.location = "login.html";
     }
     
 }
