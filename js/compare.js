@@ -1,7 +1,4 @@
 const TEST_RESULT = "test_result_data"
-const JOB_TO_SEARCH = "job_search"
-
-
 
 
 // dictionary stores all the relevant information about all the attributes
@@ -106,24 +103,6 @@ let dictionary = {
     }
 }
 
-let data = localStorage.getItem(TEST_RESULT);
-let result = JSON.parse(data);
-
-// searching for the highest score
-let highestAttribute = "E";
-for (let attribute in result)
-{
-   if(result[attribute] > result[highestAttribute])
-   {
-       highestAttribute = attribute;
-   }
-}
-
-// display all the data
-document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
-document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
-
-
 /***
  * @description creating cards with their job names, and display them to the user
  * @param attribute the highest attribute of the user
@@ -170,5 +149,27 @@ function displayResults(attribute){
     resultRef.innerHTML = output;
 }
 
-// calling the function
-displayResults(highestAttribute);
+if(localStorage.getItem(TEST_RESULT) != null)
+{
+  let data = localStorage.getItem(TEST_RESULT);
+  let result = JSON.parse(data);
+
+  // searching for the highest score
+  let highestAttribute = "R";
+  for (let attribute in result)
+  {
+     if(result[attribute] > result[highestAttribute])
+    {
+         highestAttribute = attribute;
+    }
+  }
+
+  // display all the data
+  document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
+  document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
+  displayResults(highestAttribute)
+}
+else
+{
+  document.getElementById("name").innerHTML = `<h3> You have not taken the test<h3>`
+}

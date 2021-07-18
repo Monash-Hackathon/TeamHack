@@ -37,28 +37,36 @@
                     <a class="nav-link" href="first.html" style="color:white; font-size: 3vh;">Home</a>
                     <a class="nav-link" href="test.html" style="color:white; font-size: 3vh;">Test Now</a>
                     <a class="nav-link" href="kentest.html" style="color:white; font-size: 3vh;">Search Now</a>
-                    <a class="nav-link" href="compare.html" style="color:white; font-size: 3vh;">History</a>
+                    <a class="nav-link" href="compare.html" style="color:white; font-size: 3vh;">History</a> 
                     <a class="nav-link" href="login.html" style="color:white; font-size: 3vh;" id = "loginName">Login</a>
+                  
                   </form>
                 </div>
               </nav>
             <div class="container1" style="padding-left: 90vh; padding-right: 30vh;">
-              <h1>Login Page</h1>
-
+              <h1>Create an Account</h1>
               <br>
               <div class="input-group mb-3">
-                <span class="input-group-text" style = "max-width : 300px; width: 91px;" type="text">Username</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="username">
-                <br><span id = "invalidName"></span>
+                <span class="input-group-text">@</span>
+                <input type="text"  id="newUser" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
               </div>
+          
               <div class="input-group mb-3">
-                <span class="input-group-text" style = "max-width : 300px" type="text">Password</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="passw">
-                <br><span id = "wrongPass"></span>
+                <input type="text" id="newEmail" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <span class="input-group-text" >abcdefgh@example.com</span>
               </div>
-                <button class="btn btn-primary btn-block " onclick = "login()">Login</button>
-                <br>
-                <span style = "font-size: 20px;">Don't Have Account?  </span><a style = "font-size: 20px;"href="signup.html">Create An Account</a>
+              
+              <div class="input-group mb-3">
+                <input type="password"  id="pass" class="form-control" placeholder="New Password (Min. 8 Character)" aria-label="New Password (Min. 8 Character)" aria-describedby="basic-addon1">
+                <br><span id = "lessPass"></span>
+              </div>
+          
+              <div class="input-group mb-3">
+                <input type="password"  id="cPass" class="form-control" placeholder="Confirm Your Password" aria-label="Confirm Your Password" aria-describedby="basic-addon1">
+                <br><span id = "invalidPass"></span>
+              </div>
+          
+                <button class="btn btn-primary btn-block " onclick = "createAcc()">Create Account</button>
             </div>
 
             
