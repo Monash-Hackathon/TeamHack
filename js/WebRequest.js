@@ -109,7 +109,7 @@ function showData(result) {
         {
             i++;
         }
-    }
+        }
     displayRef.innerHTML = output;
 
 }

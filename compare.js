@@ -1,4 +1,17 @@
 const TEST_RESULT = "test_result_data"
+const JOB_TO_SEARCH = "job_search"
+
+
+/*
+
+WILBERT CHANGES
+
+*/
+function findJob(pathway){
+    localStorage.setItem(JOB_TO_SEARCH, pathway);
+    window.location = "kentest.html";
+}
+
 
 // dictionary stores all the relevant information about all the attributes
 let dictionary = {
@@ -118,6 +131,7 @@ function displayResults(attribute){
               <div class="card-body">
                 <h5 class="card-title">${dictionary[attribute].pathway[i]}</h5>
                 <p class="card-text">${dictionary[attribute].des[i]}</p>
+                <button class="btn btn-primary" type="button" onclick="findJob(${dictionary[attribute].pathway[i]})">Find Related Jobs</button>
               </div>
             </div>
           </div>`
@@ -128,7 +142,7 @@ function displayResults(attribute){
       <img src="https://media1.giphy.com/media/j39AzlvlJqE7e/200w.gif?cid=82a1493bm8ociit8vin3b3nq49fvht853fh7fhgbb5wqcgkv&rid=200w.gif&ct=g">
       <div class="card-body">
         <h5 class="card-title">Take RIASEC Test Again!</h5>
-        <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead try again 😝</p>
+        <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead and try again 😝</p>
         <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
       </div>
     </div>
