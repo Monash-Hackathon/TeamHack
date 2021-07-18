@@ -1,8 +1,6 @@
 
-
 function createAcc(){
     let userRef = document.getElementById("newUser");
-    let emailRef = document.getElementById("newEmail");
     let passRef = document.getElementById("pass");
     let cpassRef = document.getElementById("cPass");
     let less = document.getElementById("lessPass");
@@ -20,13 +18,15 @@ function createAcc(){
         invalid.innerHTML = `<i style = "color : red">Username Exist</i>`   
     }
     else{
-        acc.newAccount(userRef.value, emailRef.value, passRef.value)
+        acc.newAccount(userRef.value, passRef.value)
+        acc.setProfile(userRef.value);
 
         updateData(ACC_CLASS, acc)
         loginUser = acc.findUsername(userRef.value);
+
         window.location = "second.html";
     }
-
+    
 }
 
 function login(){
@@ -34,7 +34,6 @@ function login(){
     let passRef = document.getElementById("passw");    
     let invalidName = document.getElementById("invalidName");
     let invalidPass = document.getElementById("wrongPass");
-    let loginRef = document.getElementById("loginName");
 
     if (userRef.value == "" || passRef.value == ""){
         alert("Provide the username and password")
@@ -56,8 +55,9 @@ function login(){
         invalidPass.innerHTML = `<i style = "color : red">Wrong Password</i>` 
     }
     else{
-        loginRef.innerHTML = `${acc.findAccount(userRef.value, passRef.value)}`;
-       window.location = "second.html";
+        acc.setProfile(userRef.value);
+        updateData(ACC_CLASS, acc)
+        window.location = "second.html";
     }
 }
 
