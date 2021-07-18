@@ -49,10 +49,10 @@ function login(){
     valid = acc.findAccount(userRef.value, passRef.value);
 
     if (name == undefined){
-        invalidName.innerHTML = `<i style = "color : red">Username Does Not Exist</i>`    
+        invalidName.innerHTML = `<br><i style = "color : red">Username Does Not Exist</i>`    
     }
     else if (valid == undefined){
-        invalidPass.innerHTML = `<i style = "color : red">Wrong Password</i>` 
+        invalidPass.innerHTML = `<br><div><i style = "color : red">Wrong Password</i></div>` 
     }
     else{
         acc.setProfile(userRef.value);

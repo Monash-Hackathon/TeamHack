@@ -157,7 +157,7 @@ function showData(result) {
     }
 }
 else {
-    output = `<i style = "color:red"> No Job Found</i>`
+    output = `<div style = "color:red; text-align:center; font-size:50px"><i> No Job Found</i></div>`
 }
     displayRef.innerHTML = output;
 
