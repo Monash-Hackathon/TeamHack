@@ -2,6 +2,8 @@
 Dream Job is a mobile web app that allows user to find out their career pathway, and also to search for jobs.
 
 # Description
+Our team has chosen the career theme. We came to the realisation that a lot of teenagers are struggling with career decisions. In addition to that, the unemployment rate has significantly increased due to the pandemic. Hence, we created our app to fix these problems. 
+
 Dream Job has 2 main functions - performing a personality test and job searching. 
 
 A RIASEC Personality Test was carried out to find out the user's personality. Based on the results from the personality test, the app would recommend career pathways to the user. The list of recommended pathways is stored in a hard-coded dictionary which can be searched upon.
