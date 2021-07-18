@@ -1,72 +1,75 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
 
-    <title>Search</title>
-    <style>
-     .container1 {
-    padding: 120px;
-    background-image: url(https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
-    background-repeat : no-repeat;
-    background-position : center;
-    background-size: 100%;
-       }
-    h2 { 
-        font-size: 1.2rem;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <title>Login</title>
+  <style>
+    .container1 {
+      padding: 120px;
+      background-image: url(https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
     }
 
-    .form { 
-        margin-top: 50px;
-        max-width: 400px;
+    h2 {
+      font-size: 1.2rem;
     }
 
-    </style>
+    .form {
+      margin-top: 50px;
+      max-width: 400px;
+    }
+  </style>
 </head>
 
 <body>
-            <nav class="navbar navbar-light" style="background-color: rgb(110, 155, 238);">
-                <div class="container-fluid" >
-                  <a class="navbar-brand" style="color:white; font-size: 4vh;">Dream Job</a>
-                  <form class="d-flex" s>
-                    <a class="nav-link" href="first.html" style="color:white; font-size: 3vh;">Home</a>
-                    <a class="nav-link" href="test.html" style="color:white; font-size: 3vh;">Test Now</a>
-                    <a class="nav-link" href="kentest.html" style="color:white; font-size: 3vh;">Search Now</a>
-                    <a class="nav-link" href="compare.html" style="color:white; font-size: 3vh;">History</a>
-                    <a class="nav-link" href="login.html" style="color:white; font-size: 3vh;" id = "loginName">Login</a>
-                  </form>
-                </div>
-              </nav>
-            <div class="container1" style="padding-left: 90vh; padding-right: 30vh;">
-              <h1>Login Page</h1>
+  <nav class="navbar navbar-light" style="background-color: rgb(110, 155, 238);">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color:white; font-size: 4vh;">Dream Job</a>
+      <form class="d-flex" s>
+        <a class="nav-link" href="first.html" style="color:white; font-size: 3vh;">Home</a>
+        <a class="nav-link" href="test.html" style="color:white; font-size: 3vh;">Test Now</a>
+        <a class="nav-link" href="kentest.html" style="color:white; font-size: 3vh;">Search Now</a>
+        <a class="nav-link" href="compare.html" style="color:white; font-size: 3vh;">History</a>
+        <a class="nav-link" href="login.html" style="color:white; font-size: 3vh;" id="loginName">Login</a>
+      </form>
+    </div>
+  </nav>
+  <div class="container1" style="padding-left: 90vh; padding-right: 30vh;">
+    <h1>Login Page</h1>
 
-              <br>
-              <div class="input-group mb-3">
-                <span class="input-group-text" style = "max-width : 300px; width: 91px;" type="text">Username</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="username">
-                <br><span id = "invalidName"></span>
-              </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" style = "max-width : 300px" type="text">Password</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="passw">
-                <br><span id = "wrongPass"></span>
-              </div>
-                <button class="btn btn-primary btn-block " onclick = "login()">Login</button>
-                <br>
-                <span style = "font-size: 20px;">Don't Have Account?  </span><a style = "font-size: 20px;"href="signup.html">Create An Account</a>
-            </div>
+    <br>
+    <div class="input-group mb-3">
+      <span class="input-group-text" style="max-width : 300px; width: 91px;" type="text">Username</span>
+      <input type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default" id="username">
+      <br><span id="invalidName"></span>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" style="max-width : 300px" type="text">Password</span>
+      <input type="password" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default" id="passw">
+      <br><span id="wrongPass"></span>
+    </div>
+    <button class="btn btn-primary btn-block " onclick="login()">Login</button>
+    <br>
+    <span style="font-size: 20px;">Don't Have Account? </span><a style="font-size: 20px;" href="signup.html">Create An
+      Account</a>
+  </div>
 
-            
-    <br><br>
+
+  <br><br>
 </body>
 
 <script src="js/shared.js"></script>
