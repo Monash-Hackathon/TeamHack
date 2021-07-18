@@ -89,7 +89,7 @@ function searchingJob() {
     let locRef = document.getElementById("jobLoc");
     let jobTypeRef = document.getElementById("jobType");
     let invalid = document.getElementById("invalidInput");
-
+    
     dataForwardGeo(locRef.value, "findCountryCode")
 
     setTimeout(()=>{if (countryCode != ""){
@@ -157,7 +157,7 @@ function showData(result) {
     }
 }
 else {
-    output = `<div style = "color:red; text-align:center; font-size:50px"><i> No Job Found</i></div>`
+    output = `<i style = "color:red"> No Job Found</i>`
 }
     displayRef.innerHTML = output;
 
