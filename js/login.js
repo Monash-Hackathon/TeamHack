@@ -19,10 +19,8 @@ function createAcc(){
     }
     else{
         acc.newAccount(userRef.value, passRef.value)
-        acc.setProfile(userRef.value);
 
         updateData(ACC_CLASS, acc)
-        loginUser = acc.findUsername(userRef.value);
 
         window.location = "index.html";
     }
@@ -49,10 +47,10 @@ function login(){
     valid = acc.findAccount(userRef.value, passRef.value);
 
     if (name == undefined){
-        invalidName.innerHTML = `<br><i style = "color : red">Username Does Not Exist</i>`    
+        invalidName.innerHTML = `<i style = "color : red">Username Does Not Exist</i>`    
     }
     else if (valid == undefined){
-        invalidPass.innerHTML = `<br><div><i style = "color : red">Wrong Password</i></div>` 
+        invalidPass.innerHTML = `<i style = "color : red">Wrong Password</i>` 
     }
     else{
         acc.setProfile(userRef.value);
