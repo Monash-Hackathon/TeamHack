@@ -45,8 +45,7 @@ function dataForwardGeo(location, callbackName) {
     webServiceRequest(`https://api.opencagedata.com/geocode/v1/json`, data);
 }
 
-function jobSearch(jobName, location) {
-
+function jobSearch(jobName, location, jobType) {
     //Define a variable to hold the data needed to be requested
     let data = {
         app_id: "afd0cfd8",
@@ -56,6 +55,30 @@ function jobSearch(jobName, location) {
         where: `${location}`,
         callback: "showData"
     }
+    if (jobType == "full_time")
+    {
+        data = {
+            app_id: "afd0cfd8",
+            app_key: "9816f3772da75687810de10f5b1fa1bf",
+            what: `${jobName}`,
+            results_per_page: 10,
+            full_time: 1,
+            where: `${location}`,
+            callback: "showData"
+        }
+    }
+    else
+    {
+        data = {
+            app_id: "afd0cfd8",
+            app_key: "9816f3772da75687810de10f5b1fa1bf",
+            what: `${jobName}`,
+            results_per_page: 10,
+            part_time: 1,
+            where: `${location}`,
+            callback: "showData"
+        }
+    }    
     let reqString = "https://api.adzuna.com/v1/api/jobs/"
     //Generate request to the web service
     webServiceRequest(`${reqString}${countryCode}/search/1`, data);
@@ -64,10 +87,11 @@ function jobSearch(jobName, location) {
 function searchingJob() {
     let nameRef = document.getElementById("jobName")
     let locRef = document.getElementById("jobLoc")
+    let jobTypeRef = document.getElementById("jobType")
 
     dataForwardGeo(locRef.value, "findCountryCode")
 
-    setTimeout(()=>{jobSearch(nameRef.value, locRef.value, "showData")}, 3000)
+    setTimeout(()=>{jobSearch(nameRef.value, locRef.value, jobTypeRef.value, "showData")}, 3000)
 
 }
 
@@ -99,7 +123,21 @@ function showData(result) {
             output += `<div class="col"><h5> ${data[i].location.display_name}</h5></div>
             <p class = "card-text"> ${data[i].description} </p></div>
             <div style="padding-left: 1200px;"><a class="btn btn-primary" href = "${data[i].redirect_url}" role="button">View Job</a> 
-            </div><br>
+            </div>`
+
+            if(data[i].contract_time == "full_time")
+            {
+                output += "Full Time"
+            }
+            else if (data[i].contract_time == "part_time")
+            {
+                output += "Part Time"
+            }
+            else
+            {
+                output += "Contract Not Specified"
+            }
+            output += `<br>
             </div>
             </div>
             <br>`
