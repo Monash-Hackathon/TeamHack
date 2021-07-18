@@ -85,14 +85,20 @@ function jobSearch(jobName, location, jobType) {
 }
 
 function searchingJob() {
-    let nameRef = document.getElementById("jobName")
-    let locRef = document.getElementById("jobLoc")
-    let jobTypeRef = document.getElementById("jobType")
+    let nameRef = document.getElementById("jobName");
+    let locRef = document.getElementById("jobLoc");
+    let jobTypeRef = document.getElementById("jobType");
+    let invalid = document.getElementById("invalidInput");
 
     dataForwardGeo(locRef.value, "findCountryCode")
 
-    setTimeout(()=>{jobSearch(nameRef.value, locRef.value, jobTypeRef.value, "showData")}, 3000)
-
+    setTimeout(()=>{if (countryCode != ""){
+        jobSearch(nameRef.value, locRef.value, jobTypeRef.value, "showData");
+    }
+    else{
+        alert("Invalid Country");
+    }
+    },3500)
 }
 
 function findCountryCode(result){
@@ -106,6 +112,7 @@ function showData(result) {
     let output = "";
     let i = 0;
 
+    if (result.count > 0){
     while (i<10) {
         output += `<div class = "container" style="border-radius: 15px; border: solid;" >
                 <div class="row align-items-start">`
@@ -148,6 +155,10 @@ function showData(result) {
             i++;
         }
     }
+}
+else {
+    output = `<i style = "color:red"> No Job Found</i>`
+}
     displayRef.innerHTML = output;
 
 }
