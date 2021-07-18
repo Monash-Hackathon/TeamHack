@@ -93,7 +93,7 @@ function showData(result) {
             }
             else
             {
-                output += `<div class="col">${data[i].title}<br> Salary not specified</div>`
+                output += `<div class="col">${i+1}. ${data[i].title}<br></div><div class="col"> Salary not specified</div>`
                 
             }
             output += `<div class="col"><h5> ${data[i].location.display_name}</h5></div>
