@@ -131,7 +131,7 @@ function displayResults(attribute){
       <div class="card-body">
         <h5 class="card-title">Take RIASEC Test Again!</h5>
         <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead and try again 😝</p>
-        <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
+        <a href="testIntro.html" class="btn btn-primary stretched-link">Try Again</a>
       </div>
     </div>
   </div>`
@@ -142,7 +142,7 @@ function displayResults(attribute){
       <div class="card-body">
         <h5 class="card-title">Search for more Job!</h5>
         <p class="card-text">Still can't find your dream job? No worries, we got you covered ❤️ </p>
-        <a href="kentest.html" class="btn btn-primary stretched-link">Dream Job Come True</a>
+        <a href="jobIntro.html" class="btn btn-primary stretched-link">Dream Job Come True</a>
       </div>
     </div>
   </div>`
