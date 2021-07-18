@@ -24,7 +24,7 @@ function createAcc(){
         updateData(ACC_CLASS, acc)
         loginUser = acc.findUsername(userRef.value);
 
-        window.location = "second.html";
+        window.location = "index.html";
     }
     
 }
@@ -57,7 +57,7 @@ function login(){
     else{
         acc.setProfile(userRef.value);
         updateData(ACC_CLASS, acc)
-        window.location = "second.html";
+        window.location = "index.html";
     }
 }
 
