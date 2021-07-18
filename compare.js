@@ -184,5 +184,5 @@ if(localStorage.getItem(TEST_RESULT) != null)
 }
 else
 {
-  document.getElementById("name").innerHTML = `<h3> You have not taken the test<h3>`
+  document.getElementById("name").innerHTML = `<h1> You have not taken the test<h1><br><h2>Try the test !!</h2>`
 }
