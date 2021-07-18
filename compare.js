@@ -102,18 +102,6 @@ let dictionary = {
     }
 }
 
-let data = localStorage.getItem(TEST_RESULT);
-let result = JSON.parse(data);
-
-// searching for the highest score
-let highestAttribute = "E";
-for (let attribute in result)
-{
-   if(result[attribute] > result[highestAttribute])
-   {
-       highestAttribute = attribute;
-   }
-}
 
 // display all the data
 document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
