@@ -1,5 +1,6 @@
 const TEST_RESULT = "test_result_data"
 
+
 // dictionary stores all the relevant information about all the attributes
 let dictionary = {
     "R": {
@@ -103,11 +104,6 @@ let dictionary = {
 }
 
 
-// display all the data
-document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
-document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
-
-
 /***
  * @description creating cards with their job names, and display them to the user
  * @param attribute the highest attribute of the user
@@ -134,7 +130,7 @@ function displayResults(attribute){
       <img src="https://media1.giphy.com/media/j39AzlvlJqE7e/200w.gif?cid=82a1493bm8ociit8vin3b3nq49fvht853fh7fhgbb5wqcgkv&rid=200w.gif&ct=g">
       <div class="card-body">
         <h5 class="card-title">Take RIASEC Test Again!</h5>
-        <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead try again 😝</p>
+        <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead and try again 😝</p>
         <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
       </div>
     </div>
@@ -154,5 +150,27 @@ function displayResults(attribute){
     resultRef.innerHTML = output;
 }
 
-// calling the function
-displayResults(highestAttribute);
+if(localStorage.getItem(TEST_RESULT) != null)
+{
+  let data = localStorage.getItem(TEST_RESULT);
+  let result = JSON.parse(data);
+
+  // searching for the highest score
+  let highestAttribute = "R";
+  for (let attribute in result)
+  {
+     if(result[attribute] > result[highestAttribute])
+    {
+         highestAttribute = attribute;
+    }
+  }
+
+  // display all the data
+  document.getElementById("name").innerHTML = `<h3> Your Primary Attribute is ${highestAttribute} (${dictionary[highestAttribute].name})<h3>`
+  document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
+  displayResults(highestAttribute)
+}
+else
+{
+  document.getElementById("name").innerHTML = `<div style=" padding-top: 30vh;"><h1> You have not taken the test<h1><br><h2>Try the test !!</h2></div>`
+}
