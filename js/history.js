@@ -174,5 +174,5 @@ if(localStorage.getItem(TEST_RESULT) != null)
 // if there is no data in the local storage, show user they have not dont the test
 else
 {
-  document.getElementById("name").innerHTML = `<div style=" padding-top: 30vh;"><h1> You have not taken the test<h1><br><h2>Try the test !!</h2></div>`
+  document.getElementById("name").innerHTML = `<div style=" padding-top: 30vh;"><h1> You have not taken the test<h1><a href="testIntro.html" class="btn btn-primary" id="grow">Try the test now!</a></div>`
 }
