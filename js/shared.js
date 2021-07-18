@@ -115,7 +115,7 @@ else if (checkData(ACC_CLASS) == false)
 
     if (acc.profile.length > 0 ){
         let loginRef = document.getElementById("loginName");    
-        loginRef.innerHTML = ` <i class="far fa-address-card"></i><a class="nav-link" style="color:black; font-size: 3vh;" id = "loginName">${acc.profile}</a>`;    
+        loginRef.innerHTML = ` <i class="far fa-address-card"></i><a class="nav-link" style="color:black; font-size: 3vh;border: solid;border-radius: 15px;" id = "loginName">${acc.profile}</a>`;    
     }
     else{   
         let loginRef = document.getElementById("loginName");    
