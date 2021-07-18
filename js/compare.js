@@ -2,15 +2,6 @@ const TEST_RESULT = "test_result_data"
 const JOB_TO_SEARCH = "job_search"
 
 
-/*
-
-WILBERT CHANGES
-
-*/
-function findJob(pathway){
-    localStorage.setItem(JOB_TO_SEARCH, pathway);
-    window.location = "kentest.html";
-}
 
 
 // dictionary stores all the relevant information about all the attributes
@@ -149,8 +140,7 @@ function displayResults(attribute){
               <div class="card-body">
                 <h5 class="card-title">${dictionary[attribute].pathway[i]}</h5>
                 <p class="card-text">${dictionary[attribute].des[i]}</p>
-                <button class="btn btn-primary" type="button" onclick="findJob(${dictionary[attribute].pathway[i]})">Find Related Jobs</button>
-              </div>
+               </div>
             </div>
           </div>`
     }
