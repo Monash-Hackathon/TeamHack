@@ -18,7 +18,7 @@ function findJob(index){
    },
   )
   
-  setTimeout(()=>{window.location = "jobSearch.html"}, 2000);
+  window.location = "jobIntro.html"
 }
 
 function dataReverseGeo(lng, lat, callbackName) {
