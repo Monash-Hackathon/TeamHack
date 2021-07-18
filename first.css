@@ -1,0 +1,31 @@
+.center {
+  margin: 0;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.bg {
+  /* The image used */
+  /* background-image: url("https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png"); */
+  background-image: url(https://i0.wp.com/66.media.tumblr.com/5fe895e2a394ef21b29333ac2123f0e4/tumblr_ojou5jTY7H1t6limbo2_500.gif);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+#circle:hover {
+  border-radius: 50%;
+}
