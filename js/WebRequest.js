@@ -45,6 +45,8 @@ function dataForwardGeo(location, callbackName) {
     webServiceRequest(`https://api.opencagedata.com/geocode/v1/json`, data);
 }
 
+
+
 function jobSearch(jobName, location, jobType) {
     //Define a variable to hold the data needed to be requested
     let data = {
@@ -88,7 +90,6 @@ function searchingJob() {
     let nameRef = document.getElementById("jobName");
     let locRef = document.getElementById("jobLoc");
     let jobTypeRef = document.getElementById("jobType");
-    let invalid = document.getElementById("invalidInput");
     
     dataForwardGeo(locRef.value, "findCountryCode")
 

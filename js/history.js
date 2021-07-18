@@ -1,4 +1,45 @@
 const TEST_RESULT = "test_result_data"
+const ATTRI_RESULT = "job_name"
+const LOCATE_USER = "user_loc"
+let array = [];
+
+function findJob(index){
+
+  localStorage.setItem(ATTRI_RESULT, array[index]);
+  
+  // check if geolocation is supported/enabled on current browser
+  navigator.geolocation.getCurrentPosition(
+   function success(position) {
+     // for when getting location is a success
+     console.log('latitude', position.coords.latitude, 
+                 'longitude', position.coords.longitude);
+                 
+   dataReverseGeo(position.coords.longitude, position.coords.latitude, "userLocation")
+   },
+  )
+  
+  setTimeout(()=>{window.location = "jobSearch.html"}, 2000);
+}
+
+function dataReverseGeo(lng, lat, callbackName) {
+
+  //Define a variable to hold the data needed to be requested
+  let data = {
+      q: `${lat}+${lng}`,
+      key: "46a38f2f952f4a65a8340cb1d569a8db",
+      callback: callbackName
+  }
+
+  //Generate request to the web service
+  webServiceRequest(`https://api.opencagedata.com/geocode/v1/json`, data);
+}
+
+
+function userLocation(result){
+  console.log(result.results);
+  let data = result.results[0].components.state;
+  localStorage.setItem(LOCATE_USER, data);
+}
 
 
 // dictionary stores all the relevant information about all the attributes
@@ -113,12 +154,14 @@ function displayResults(attribute){
 
     for(let i = 0; i < dictionary[attribute].pathway.length; i++)
     {
+        array.push(dictionary[attribute].pathway[i]);
         output += ` <div class="col">
             <div class="card h-100">
               <img src="${dictionary[attribute].gif[i]}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">${dictionary[attribute].pathway[i]}</h5>
                 <p class="card-text">${dictionary[attribute].des[i]}</p>
+                <button class="btn btn-primary btn-block " onclick="findJob(${i})">Find Related Jobs</button>
               </div>
             </div>
           </div>`
