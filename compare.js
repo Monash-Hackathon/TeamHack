@@ -150,6 +150,8 @@ function displayResults(attribute){
     resultRef.innerHTML = output;
 }
 
+// displaying the data to the user
+// if there is information in the local storage, display it to the user
 if(localStorage.getItem(TEST_RESULT) != null)
 {
   let data = localStorage.getItem(TEST_RESULT);
@@ -170,6 +172,7 @@ if(localStorage.getItem(TEST_RESULT) != null)
   document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
   displayResults(highestAttribute)
 }
+// if there is no data in the local storage, show user they have not dont the test
 else
 {
   document.getElementById("name").innerHTML = `<div style=" padding-top: 30vh;"><h1> You have not taken the test<h1><br><h2>Try the test !!</h2></div>`
