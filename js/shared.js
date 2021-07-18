@@ -6,17 +6,20 @@ class Account{
     constructor(){
         this._username = [];
         this._password = [];
-        this._email = [];
+        this._profile = ""
     }
 
     get accName(){return this._username}
     get accPass(){return this._password}
-    get accEmail(){return this._email}
+    get profile(){return this._profile}
 
-    newAccount(username, email, password){
-        this._username[this._username.length] = username;
+    setProfile(username){
+        this._profile = username;
+    }
+
+    newAccount(username, password){
+        this._username.push(username);
         this._password.push(password);
-        this._email.push(email);
     }
 
     findAccount(username, password){
@@ -39,11 +42,11 @@ class Account{
 
         this._username = [];        
         this._password = [];
-        this._email = [];
+this._profile = dataObject._profile;
         for (let i=0; i<dataObject._username.length; i++){
             this._username.push(dataObject._username[i])
             this._password.push(dataObject._password[i])
-            this._email.push(dataObject._email[i])
+
         }
     }
 
@@ -108,3 +111,13 @@ else if (checkData(ACC_CLASS) == false)
     updateData(ACC_CLASS, acc);
 }
 
+
+
+    if (acc.profile.length > 0 ){
+        let loginRef = document.getElementById("loginName");    
+        loginRef.innerHTML = ` <i class="far fa-address-card"></i><a class="nav-link" style="color:black; font-size: 3vh;" id = "loginName">${acc.profile}</a>`;    
+    }
+    else{   
+        let loginRef = document.getElementById("loginName");    
+        loginRef.innerHTML = `<a class="nav-link" href="login.html" style="color:white; font-size: 3vh;" id = "loginName">Login</a>`;
+    }
