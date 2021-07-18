@@ -2,15 +2,7 @@ const TEST_RESULT = "test_result_data"
 const JOB_TO_SEARCH = "job_search"
 
 
-/*
 
-WILBERT CHANGES
-
-*/
-function findJob(pathway){
-    localStorage.setItem(JOB_TO_SEARCH, pathway);
-    window.location = "kentest.html";
-}
 
 
 // dictionary stores all the relevant information about all the attributes
@@ -113,6 +105,14 @@ let dictionary = {
         "Entering customer and account data from source documents within time limits. Compiling, verifying accuracy and sorting information to prepare source data for computer entry. Reviewing data for deficiencies or errors, correcting any incompatibilities and checking output."]
 
     }
+}
+
+/*
+WILBERT CHANGES
+*/
+function findJob(pathway){
+    localStorage.setItem(JOB_TO_SEARCH, pathway);
+    window.location = "kentest.html";
 }
 
 /***
