@@ -35,40 +35,39 @@
 <body>
             <nav class="navbar navbar-light" style="background-color: rgb(110, 155, 238);">
                 <div class="container-fluid" >
-                  <a class="navbar-brand" style="color:white; font-size: 4vh;">Dream Job</a>
+                  <a class="navbar-brand" style="color:white; font-size: 4vh;"><img src="img/imageedit_1_3687347532.png" style="height: 8vh;padding-bottom: 1vh;">Dream Job</a>
                   <form class="d-flex" s>
                     <a class="nav-link" href="homePage.html" style="color:white; font-size: 3vh;">Home</a>
                     <a class="nav-link" href="testIntro.html" style="color:white; font-size: 3vh;">Test Now</a>
                     <a class="nav-link" href="jobIntro.html" style="color:white; font-size: 3vh;">Search Now</a>
                     <a class="nav-link" href="history.html" style="color:white; font-size: 3vh;">History</a> 
                     <a class="nav-link" href="login.html" style="color:white; font-size: 3vh;" id = "loginName">Login</a>
-                  
                   </form>
                 </div>
               </nav>
-            <div class="container1" style="padding-left: 90vh; padding-right: 30vh;">
-              <h1>Create an Account</h1>
               <br>
-              <div class="input-group mb-3">
-                <span class="input-group-text">@</span>
-                <input type="text"  id="newUser" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-          
-              <div class="input-group mb-3">
-                <input type="password"  id="pass" class="form-control" placeholder="New Password (Min. 8 Character)" aria-label="New Password (Min. 8 Character)" aria-describedby="basic-addon1">
-                <br><span id = "lessPass"></span>
-              </div>
-          
-              <div class="input-group mb-3">
-                <input type="password"  id="cPass" class="form-control" placeholder="Confirm Your Password" aria-label="Confirm Your Password" aria-describedby="basic-addon1">
-                <br><span id = "invalidPass"></span>
-              </div>
-          
-                <button class="btn btn-primary btn-block " onclick = "createAcc()">Create Account</button>
-            </div>
-
-            
+  <div class="card" style="width: 26rem;margin: 0 auto;float: none;margin-bottom: 10px;">
+    <img src="https://cdn.dribbble.com/users/1632728/screenshots/4693038/profilepic_dribbble.gif" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title"><b>Sign Up a New Account</b></h2>
+      <p class="card-text">    
+        <div class="input-group mb-3">
+          <span class="input-group-text">@</span>
+          <input type="text"  id="newUser" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <input type="password"  id="pass" class="form-control" placeholder="New Password (Min. 8 Character)" aria-label="New Password (Min. 8 Character)" aria-describedby="basic-addon1">
+          <br><span id = "lessPass"></span>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password"  id="cPass" class="form-control" placeholder="Confirm Your Password" aria-label="Confirm Your Password" aria-describedby="basic-addon1">
+          <br><span id = "invalidPass"></span>
+        </div>
+      
+    </p>
+    <button class="btn btn-primary btn-block " onclick = "createAcc()">Create Account</button>
     <br><br>
+  </div>
 </body>
 
 <script src="js/shared.js"></script>

@@ -36,7 +36,7 @@
 <body>
   <nav class="navbar navbar-light" style="background-color: rgb(110, 155, 238);">
     <div class="container-fluid">
-      <a class="navbar-brand" style="color:white; font-size: 4vh;">Dream Job</a>
+      <a class="navbar-brand" style="color:white; font-size: 4vh;"><img src="img/imageedit_1_3687347532.png" style="height: 8vh;padding-bottom: 1vh;">Dream Job</a>
       <form class="d-flex" s>
         <a class="nav-link" href="homePage.html" style="color:white; font-size: 3vh;">Home</a>
         <a class="nav-link" href="testIntro.html" style="color:white; font-size: 3vh;">Test Now</a>
@@ -46,26 +46,30 @@
       </form>
     </div>
   </nav>
-  <div class="container1" style="padding-left: 90vh; padding-right: 30vh;">
-    <h1>Login Page</h1>
-
-    <br>
-    <div class="input-group mb-3">
-      <span class="input-group-text" style="max-width : 300px; width: 91px;" type="text">Username</span>
-      <input type="text" class="form-control" aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-default" id="username">
-      <br><span id="invalidName"></span>
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" style="max-width : 300px" type="text">Password</span>
-      <input type="password" class="form-control" aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-default" id="passw">
-      <br><span id="wrongPass"></span>
-    </div>
+  <br>
+  <div class="card" style="width: 26rem;margin: 0 auto;float: none;margin-bottom: 10px;">
+    <img src="img/head_bob.gif" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title"><b>Login</b></h2>
+      <p class="card-text">    
+        <div class="input-group mb-3">
+        <span class="input-group-text" style="max-width : 300px; width: 91px;" type="text">Username</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" id="username">
+        <br><span id="invalidName"></span>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" style="max-width : 300px" type="text">Password</span>
+        <input type="password" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" id="passw">
+        <br><span id="wrongPass"></span>
+      </div>
+    </p>
     <button class="btn btn-primary btn-block " onclick="login()">Login</button>
     <br>
     <span style="font-size: 20px;">Don't Have Account? </span><a style="font-size: 20px;" href="signup.html">Create An
       Account</a>
+    </div>
   </div>
   <br><br>
 </body>

@@ -19,10 +19,8 @@ function createAcc(){
     }
     else{
         acc.newAccount(userRef.value, passRef.value)
-        acc.setProfile(userRef.value);
 
         updateData(ACC_CLASS, acc)
-        loginUser = acc.findUsername(userRef.value);
 
         window.location = "index.html";
     }
