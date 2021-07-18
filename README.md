@@ -1,16 +1,19 @@
+# Theme
+Career
+
 # Dream Job
 Dream Job is a mobile web app that allows user to find out their career pathway, and also to search for jobs.
 
 # Description
 Our team has chosen the career theme. We came to the realisation that a lot of teenagers are struggling with career decisions. In addition to that, the unemployment rate has significantly increased due to the pandemic. Hence, we created our app to fix these problems. 
 
-Dream Job has 2 main functions - performing a personality test and job searching. 
+Dream Job has 3 main functions - performing a personality test, providing latest careers news and job searching. 
 
 A RIASEC Personality Test was carried out to find out the user's personality. Based on the results from the personality test, the app would recommend career pathways to the user. The list of recommended pathways is stored in a hard-coded dictionary which can be searched upon.
 
 The job searching functionality was carried out by 2 APIs, Adzuna API and Open Cage Geocoding API. Adzuna API is used to carry out the job searching, whereas Open Cage Geocoding API is used to locate the location's country.
 
-The major drawback of this app is that a lot of the code was hard-code. We were unable to find any APIs that were free to perform a personality test, so the only other way was to hard-code all of the questions into the app as well as the results into the app. 
+The drawback of this code is that some of it is still hard-code, such as the news page where it is only shown some brief information. Also, we were unable to find any APIs that were free to perform a personality test, so the only other way was to hard-code all of the questions into the app as well as the results into the app. 
 
 The second drawback of this app is that the Adzuna API only works in certain countries. We were unable to perform an error checking to show to the user if an error occured. 
 
