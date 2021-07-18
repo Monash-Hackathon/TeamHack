@@ -119,7 +119,7 @@ function displayResults(attribute){
               <div class="card-body">
                 <h5 class="card-title">${dictionary[attribute].pathway[i]}</h5>
                 <p class="card-text">${dictionary[attribute].des[i]}</p>
-               </div>
+              </div>
             </div>
           </div>`
     }
@@ -130,7 +130,7 @@ function displayResults(attribute){
       <div class="card-body">
         <h5 class="card-title">Take RIASEC Test Again!</h5>
         <p class="card-text">Not satisfied with your results? Still doubting our system? Go ahead and try again 😝</p>
-        <a href="test.html" class="btn btn-primary stretched-link">Try Again</a>
+        <a href="testIntro.html" class="btn btn-primary stretched-link">Try Again</a>
       </div>
     </div>
   </div>`
@@ -141,7 +141,7 @@ function displayResults(attribute){
       <div class="card-body">
         <h5 class="card-title">Search for more Job!</h5>
         <p class="card-text">Still can't find your dream job? No worries, we got you covered ❤️ </p>
-        <a href="kentest.html" class="btn btn-primary stretched-link">Dream Job Come True</a>
+        <a href="jobIntro.html" class="btn btn-primary stretched-link">Dream Job Come True</a>
       </div>
     </div>
   </div>`
@@ -149,6 +149,8 @@ function displayResults(attribute){
     resultRef.innerHTML = output;
 }
 
+// displaying the data to the user
+// if there is information in the local storage, display it to the user
 if(localStorage.getItem(TEST_RESULT) != null)
 {
   let data = localStorage.getItem(TEST_RESULT);
@@ -169,7 +171,8 @@ if(localStorage.getItem(TEST_RESULT) != null)
   document.getElementById("description").innerHTML = `<h3> ${dictionary[highestAttribute].description}<h3>`
   displayResults(highestAttribute)
 }
+// if there is no data in the local storage, show user they have not dont the test
 else
 {
-  document.getElementById("name").innerHTML = `<h3> You have not taken the test<h3>`
+  document.getElementById("name").innerHTML = `<div style=" padding-top: 30vh;"><h1> You have not taken the test<h1><br><h2>Try the test !!</h2></div>`
 }
